@@ -9,7 +9,9 @@ function Libretto(){
     
   }
 
-  if(localStorage.getItem('db')){
+  var vuotaAllInizio = false;
+
+  if(localStorage.getItem('db') && vuotaAllInizio){
     this.array = JSON.parse(localStorage.getItem('db'));
     for(var i=0; i<this.array.length; i++){
       this.renderVoto(this.array[i]);

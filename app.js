@@ -1,5 +1,5 @@
 function Libretto(){
-  if(localStorage.getItem('db') !== undefined){
+  if(localStorage.getItem('db')){
     this.array = JSON.parse(localStorage.getItem('db'));
     for(var i=0; i<this.array.length; i++){
       this.renderVoto(this.array[i]);

@@ -1,4 +1,14 @@
 function Libretto(){
+
+  this.renderVoto= function(voto){
+    var li = document.createElement('li');
+    var list = document.querySelector('#libretto');
+    list.appendChild(li);
+    li.innerHTML = voto.data + " " +voto.voto + " " +voto.materia;
+    li.className='list-group-item';
+    
+  }
+
   if(localStorage.getItem('db')){
     this.array = JSON.parse(localStorage.getItem('db'));
     for(var i=0; i<this.array.length; i++){
@@ -21,14 +31,6 @@ function Libretto(){
     this.saveVoto();
   }
   
-  this.renderVoto= function(voto){
-    var li = document.createElement('li');
-    var list = document.querySelector('#libretto');
-    list.appendChild(li);
-    li.innerHTML = voto.data + " " +voto.voto + " " +voto.materia;
-    li.className='list-group-item';
-    
-  }
   this.saveVoto = function(voto){
     localStorage.setItem('db',JSON.stringify(this.array));
   }

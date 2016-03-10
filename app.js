@@ -1,7 +1,7 @@
 function Libretto(){
   if(localStorage.getItem('db') !== undefined){
     this.array = JSON.parse(localStorage.getItem('db'));
-    for(var i=0; i<this.array.lenght; i++){
+    for(var i=0; i<this.array.length; i++){
       this.renderVoto(this.array[i]);
     }
   } else {
